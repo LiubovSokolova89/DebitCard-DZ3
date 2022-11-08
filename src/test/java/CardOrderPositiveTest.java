@@ -1,3 +1,4 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +12,8 @@ public class CardOrderPositiveTest {
 
     @BeforeAll
     static void setUpAll() {
-        System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
+        WebDriverManager.chromedriver().setup();
+//        System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
     }
 
     @BeforeEach
@@ -20,7 +22,7 @@ public class CardOrderPositiveTest {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
-        driver = new ChromeDriver(options);
+        driver = new ChromeDriver();
 
     }
 
@@ -32,6 +34,8 @@ public class CardOrderPositiveTest {
 
     @Test
     void shouldShowSuccessfulSubmission() {
+        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
+        String title = driver.getTitle();
         driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов Иван");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79998888888");
