@@ -34,8 +34,8 @@ public class CardOrderPositiveTest {
 
     @Test
     void shouldShowSuccessfulSubmission() {
-        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
-        String title = driver.getTitle();
+//        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
+//        String title = driver.getTitle();
         driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов Иван");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79998888888");
