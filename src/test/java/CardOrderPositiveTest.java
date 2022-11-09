@@ -22,6 +22,7 @@ public class CardOrderPositiveTest {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
+        options.setHeadless(true);
         driver = new ChromeDriver();
 
     }
