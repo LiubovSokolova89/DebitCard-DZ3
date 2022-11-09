@@ -23,7 +23,7 @@ public class CardOrderPositiveTest {
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         options.setHeadless(true);
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
 
     }
 
